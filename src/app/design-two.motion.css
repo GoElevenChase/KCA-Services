@@ -128,3 +128,11 @@
 .two-footer-grid{padding-bottom:40px}
 .two-footer-col ul,.two-footer-col a{font-size:14px}
 @media (max-width:760px){.two-hero{min-height:0}.two-split{min-height:0}.two-capabilities,.two-faq{padding-block:56px}.two-process{padding-block:56px}.two-contact-photo{min-height:0}}
+
+/* mobile polish */
+@media (max-width:1000px){.design-two .header-phone{display:none}}
+@media (max-width:760px){
+  .two-hero-photo{-webkit-mask-image:none;mask-image:none}
+  .two-footer-tag{white-space:nowrap;font-size:9px;letter-spacing:.14em}
+  .two-footer-grid{gap:28px 20px}
+}

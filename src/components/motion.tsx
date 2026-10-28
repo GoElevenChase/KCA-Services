@@ -57,7 +57,10 @@ export function Motion({ rules, parallax = [] }: { rules: readonly Rule[]; paral
     countUps.forEach(el => { el.dataset.fx ??= "fade"; watcher.observe(el); });
     cleanups.push(() => watcher.disconnect());
     // Never leave content hidden if something goes wrong.
-    const safety = window.setTimeout(() => targets.forEach(el => el.classList.add("is-in")), 6000);
+    const safety = window.setTimeout(() => {
+      targets.forEach(el => el.classList.add("is-in"));
+      countUps.forEach(el => { if (el.dataset.count) el.textContent = el.dataset.count; });
+    }, 6000);
     cleanups.push(() => window.clearTimeout(safety));
 
     // Parallax, header state, progress

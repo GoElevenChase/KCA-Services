@@ -62,3 +62,13 @@
   .chooser-call{margin-left:auto}
   .chooser-logo img{height:64px}
 }
+
+@media (max-width:560px){
+  .chooser .chooser-header{padding:10px 16px;gap:12px}
+  .chooser-logo img{height:54px}
+  .chooser-call{padding:10px 14px;font-size:12px;gap:8px}
+  .chooser-hero{padding-top:36px}
+  .chooser-grid{padding-inline:16px}
+  .chooser-note,.chooser-footer{padding-inline:16px}
+  .choice-top{flex-direction:column;gap:6px}
+}
