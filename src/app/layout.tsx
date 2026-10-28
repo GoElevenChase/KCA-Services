@@ -1,0 +1,14 @@
+import type { ReactNode } from "react";
+import { siteMetadata } from "@/lib/metadata";
+import "./globals.css";
+import "./motion.css";
+
+export const metadata = siteMetadata;
+
+// Runs before first paint so entrance animations never flash. Skipped when the
+// visitor prefers reduced motion; without it the page is simply static.
+const motionGate = "try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('js-motion')}catch(e){}";
+
+export default function RootLayout({ children }: { children: ReactNode }) {
+  return <html lang="en"><head><link rel="preload" href="/fonts/Manrope.ttf" as="font" type="font/ttf" crossOrigin="anonymous" /><script dangerouslySetInnerHTML={{ __html: motionGate }} /></head><body><a className="skip-link" href="#main-content">Skip to content</a>{children}</body></html>;
+}

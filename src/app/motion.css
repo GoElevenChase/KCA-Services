@@ -1,0 +1,50 @@
+/* Motion system. Everything here is gated by .js-motion, which is only set when
+   the visitor has not asked for reduced motion. */
+.scroll-progress{position:fixed;z-index:80;top:0;left:0;right:0;height:3px;pointer-events:none}
+.scroll-progress i{display:block;height:100%;background:linear-gradient(90deg,var(--gold-deep),var(--gold),#f4d27a);transform-origin:0 50%;transform:scaleX(var(--p,0))}
+
+/* scroll reveal */
+.js-motion [data-fx]{opacity:0;transition:opacity .7s var(--ease) var(--d,0ms),transform .8s var(--ease) var(--d,0ms),clip-path .9s var(--ease) var(--d,0ms)}
+.js-motion [data-fx=up]{transform:translate3d(0,32px,0)}
+.js-motion [data-fx=left]{transform:translate3d(-70px,0,0)}
+.js-motion [data-fx=right]{transform:translate3d(70px,0,0)}
+.js-motion [data-fx=zoom]{transform:scale(.94)}
+.js-motion [data-fx=wipe-l]{opacity:1;clip-path:inset(0 100% 0 0)}
+.js-motion [data-fx=wipe-r]{opacity:1;clip-path:inset(0 0 0 100%)}
+.js-motion [data-fx=wipe-up]{opacity:1;clip-path:inset(100% 0 0 0)}
+.js-motion [data-fx].is-in{opacity:1;transform:none;clip-path:inset(0 0 0 0)}
+.js-motion img[data-fx].is-in{transition:opacity .6s var(--ease) var(--d,0ms),transform .9s var(--ease),clip-path .9s var(--ease) var(--d,0ms)}
+
+/* parallax layers set --py from script */
+.js-motion [data-parallax]{transform:translate3d(0,var(--py,0px),0) scale(1.1)}
+
+/* header */
+.site-header{transition:box-shadow .4s,background .4s,height .4s var(--ease)}
+.site-header.is-scrolled{box-shadow:0 10px 34px -14px rgba(10,20,40,.35)}
+.js-motion .site-header{animation:drop .8s var(--ease) both}
+@keyframes drop{from{transform:translateY(-100%);opacity:0}to{transform:none;opacity:1}}
+
+/* buttons: magnetic pull + light sweep */
+.header-cta,.one-button,.two-button,.form-submit{position:relative;overflow:hidden;transform:translate(var(--mx,0px),var(--my,0px));transition:transform .25s var(--ease),background .25s,box-shadow .3s}
+.header-cta::after,.one-button::after,.two-button::after,.form-submit::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);transform:translateX(-120%);transition:transform .8s var(--ease)}
+.header-cta:hover::after,.one-button:hover::after,.two-button:hover::after,.form-submit:hover:not(:disabled)::after{transform:translateX(120%)}
+.header-cta:hover,.one-button:hover,.two-button:hover,.form-submit:hover:not(:disabled){box-shadow:0 12px 26px -10px rgba(216,169,63,.8)}
+
+/* accordion */
+.acc-body{animation:none}
+details[open] .acc-body{animation:accIn .5s var(--ease) both}
+@keyframes accIn{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+.accordion summary{transition:padding-left .3s var(--ease),color .3s}
+.accordion summary:hover{padding-left:10px}
+
+/* hero entrance (CSS only so it plays before hydration) */
+@keyframes rise{from{opacity:0;transform:translate3d(0,32px,0)}to{opacity:1;transform:none}}
+@keyframes slideIn{from{opacity:0;transform:translate3d(50px,0,0)}to{opacity:1;transform:none}}
+@keyframes zoomOut{from{transform:scale(1.22)}to{transform:scale(1)}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes pulseGold{0%,100%{box-shadow:0 0 0 0 rgba(216,169,63,.5)}60%{box-shadow:0 0 0 14px rgba(216,169,63,0)}}
+
+@media (prefers-reduced-motion:reduce){
+  .js-motion [data-fx]{opacity:1!important;transform:none!important;clip-path:none!important;filter:none!important}
+}
