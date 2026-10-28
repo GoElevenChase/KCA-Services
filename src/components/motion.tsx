@@ -39,7 +39,7 @@ export function Motion({ rules, parallax = [] }: { rules: readonly Rule[]; paral
         const index = counts.get(parent) ?? 0;
         counts.set(parent, index + 1);
         el.dataset.fx = rule.fx ?? "up";
-        el.style.setProperty("--d", `${Math.min(index, 8) * (rule.stagger ?? 0)}ms`);
+        el.style.setProperty("--d", `${Math.min(index, 5) * Math.round((rule.stagger ?? 0) * 0.7)}ms`);
         targets.push(el);
       });
     }
@@ -54,7 +54,7 @@ export function Motion({ rules, parallax = [] }: { rules: readonly Rule[]; paral
         window.setTimeout(() => el.style.setProperty("--d", "0ms"), 1800);
         if (el.dataset.count) runCount(el);
       }
-    }, { threshold: 0.05, rootMargin: "0px 0px 8% 0px" });
+    }, { threshold: 0, rootMargin: "0px 0px 22% 0px" });
     targets.forEach(el => watcher.observe(el));
     countUps.forEach(el => { el.dataset.fx ??= "fade"; watcher.observe(el); });
     cleanups.push(() => watcher.disconnect());

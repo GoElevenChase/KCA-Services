@@ -4,10 +4,10 @@
 .scroll-progress i{display:block;height:100%;background:linear-gradient(90deg,var(--gold-deep),var(--gold),#f4d27a);transform-origin:0 50%;transform:scaleX(var(--p,0))}
 
 /* scroll reveal */
-.js-motion [data-fx]{opacity:0;transition:opacity .7s var(--ease) var(--d,0ms),transform .8s var(--ease) var(--d,0ms),clip-path .9s var(--ease) var(--d,0ms)}
-.js-motion [data-fx=up]{transform:translate3d(0,32px,0)}
-.js-motion [data-fx=left]{transform:translate3d(-70px,0,0)}
-.js-motion [data-fx=right]{transform:translate3d(70px,0,0)}
+.js-motion [data-fx]{opacity:0;transition:opacity .5s var(--ease) var(--d,0ms),transform .6s var(--ease) var(--d,0ms)}
+.js-motion [data-fx=up]{transform:translate3d(0,24px,0)}
+.js-motion [data-fx=left]{transform:translate3d(-40px,0,0)}
+.js-motion [data-fx=right]{transform:translate3d(40px,0,0)}
 .js-motion [data-fx=zoom]{transform:scale(.94)}
 .js-motion [data-fx=wipe-l]{opacity:1;clip-path:inset(0 100% 0 0)}
 .js-motion [data-fx=wipe-r]{opacity:1;clip-path:inset(0 0 0 100%)}
