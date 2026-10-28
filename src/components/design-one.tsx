@@ -18,16 +18,11 @@ const rules: readonly Rule[] = [
   { sel: ".one-intro-head > *", fx: "up", stagger: 120 },
   { sel: ".one-pillar", fx: "up", stagger: 140 },
   { sel: ".one-tabs li", fx: "fade", stagger: 90 },
-  { sel: ".one-row:not(.is-flip) > img", fx: "wipe-l" },
-  { sel: ".one-row.is-flip > img", fx: "wipe-r" },
   { sel: ".one-row-copy > *", fx: "up", stagger: 110 },
-  { sel: ".one-approach > img", fx: "wipe-r" },
   { sel: ".one-approach-copy > *", fx: "up", stagger: 110 },
-  { sel: ".one-solutions > img", fx: "wipe-l" },
   { sel: ".one-solutions-list > *", fx: "up", stagger: 100 },
   { sel: ".one-solutions-list li", fx: "left", stagger: 90 },
   { sel: ".one-solutions-quote > *", fx: "up", stagger: 160 },
-  { sel: ".one-area > img", fx: "wipe-l" },
   { sel: ".one-area-copy > *", fx: "up", stagger: 110 },
   { sel: ".one-area-list > *, .one-area-list li", fx: "left", stagger: 80 },
   { sel: ".one-since", fx: "up" },
@@ -65,7 +60,7 @@ export function DesignOne() {
           <p className="one-hero-text">Reliable home HVAC and plumbing service in Boerne and the greater San Antonio area.</p>
           <div className="one-hero-actions"><a className="one-button" href="#contact">Request Service</a><a className="one-call" href={business.phoneHref}><PhoneIcon /> Call {business.phone}</a></div>
         </div>
-        <div className="one-hero-photo"><img data-parallax fetchPriority="high" decoding="async" src="/images/a-hero.webp" alt="A KCA Services technician working on an outdoor air conditioning unit" width="1744" height="944" /><span className="one-hero-tag">PROFESSIONAL SERVICE.<br />LASTING COMFORT.</span></div>
+        <div className="one-hero-photo"><img data-parallax fetchPriority="high" src="/images/a-hero.webp" alt="A KCA Services technician working on an outdoor air conditioning unit" width="1744" height="944" /><span className="one-hero-tag">PROFESSIONAL SERVICE.<br />LASTING COMFORT.</span></div>
       </section>
 
       <section className="one-intro" aria-labelledby="one-intro-title">
@@ -75,24 +70,24 @@ export function DesignOne() {
       </section>
 
       <div className="one-rows">
-        <section className="one-row" id="air-conditioning" aria-labelledby="one-ac"><img src="/images/a-ac.webp" alt="Outdoor air conditioning condenser surrounded by landscaping" width="1396" height="592" decoding="async" /><div className="one-row-copy"><p className="one-index"><b>01</b> / AIR CONDITIONING</p><h2 id="one-ac">Stay cool when Texas heats up.</h2><p>Beat the Texas heat with energy-efficient AC systems, expert repairs, and professional installation.</p><a className="one-more" href="#contact">Learn More <Arrow /></a></div></section>
-        <section className="one-row is-flip" id="heating" aria-labelledby="one-heat"><div className="one-row-copy"><p className="one-index"><b>02</b> / HEATING</p><h2 id="one-heat">Warmth you can count on.</h2><p>Stay cozy through the cold with reliable heating service, maintenance, and repairs.</p><a className="one-more" href="#contact">Learn More <Arrow /></a></div><img src="/images/a-furnace.webp" alt="A heating system installed in a utility room" width="1392" height="580" decoding="async" /></section>
-        <section className="one-row" id="plumbing" aria-labelledby="one-plumb"><img src="/images/a-plumbing.webp" alt="A plumber tightening a sink drain pipe" width="1396" height="564" decoding="async" /><div className="one-row-copy"><p className="one-index"><b>03</b> / PLUMBING</p><h2 id="one-plumb">Plumbing that keeps life moving.</h2><p>From everyday repairs to major installations, our plumbing services keep your home running smoothly.</p><a className="one-more" href="#contact">Learn More <Arrow /></a></div></section>
+        <section className="one-row" id="air-conditioning" aria-labelledby="one-ac"><img src="/images/a-ac.webp" alt="Outdoor air conditioning condenser surrounded by landscaping" width="1396" height="592" /><div className="one-row-copy"><p className="one-index"><b>01</b> / AIR CONDITIONING</p><h2 id="one-ac">Stay cool when Texas heats up.</h2><p>Beat the Texas heat with energy-efficient AC systems, expert repairs, and professional installation.</p><a className="one-more" href="#contact">Learn More <Arrow /></a></div></section>
+        <section className="one-row is-flip" id="heating" aria-labelledby="one-heat"><div className="one-row-copy"><p className="one-index"><b>02</b> / HEATING</p><h2 id="one-heat">Warmth you can count on.</h2><p>Stay cozy through the cold with reliable heating service, maintenance, and repairs.</p><a className="one-more" href="#contact">Learn More <Arrow /></a></div><img src="/images/a-furnace.webp" alt="A heating system installed in a utility room" width="1392" height="580" /></section>
+        <section className="one-row" id="plumbing" aria-labelledby="one-plumb"><img src="/images/a-plumbing.webp" alt="A plumber tightening a sink drain pipe" width="1396" height="564" /><div className="one-row-copy"><p className="one-index"><b>03</b> / PLUMBING</p><h2 id="one-plumb">Plumbing that keeps life moving.</h2><p>From everyday repairs to major installations, our plumbing services keep your home running smoothly.</p><a className="one-more" href="#contact">Learn More <Arrow /></a></div></section>
       </div>
 
       <section className="one-approach" id="about" aria-labelledby="one-approach-title">
         <div className="one-approach-copy"><p className="one-index"><b>02</b> / OUR APPROACH</p><h2 id="one-approach-title">Good service starts with listening.</h2><p>We take the time to understand your needs, provide honest recommendations, and deliver quality work that lasts. Your comfort is our priority.</p><a className="one-button is-small" href="#contact">Learn More About Us</a></div>
-        <img src="/images/a-living.webp" alt="A bright, comfortable living room" width="1392" height="620" decoding="async" />
+        <img src="/images/a-living.webp" alt="A bright, comfortable living room" width="1392" height="620" />
       </section>
 
       <section className="one-solutions" aria-labelledby="one-solutions-title">
-        <img src="/images/a-comfort.webp" alt="A residential air conditioning unit beside a home" width="944" height="528" decoding="async" />
+        <img src="/images/a-comfort.webp" alt="A residential air conditioning unit beside a home" width="944" height="528" />
         <div className="one-solutions-list"><p className="one-index"><b>03</b> / OUR COMFORT SOLUTIONS</p><h2 id="one-solutions-title">Complete comfort for your home.</h2><ul>{["AC repair and installation", "Seasonal tune-ups", "Indoor air quality", "Water heaters", "Drain cleaning"].map(item => <li key={item}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.500" strokeWidth="1.600" /><path d="m8 12.500 3 3 5-6" /></svg>{item}</li>)}</ul></div>
         <div className="one-solutions-quote"><p className="one-index is-gold">BUILT FOR TEXAS HOMES</p><p className="one-quote">Trusted heating, cooling and plumbing solutions.</p></div>
       </section>
 
       <section className="one-area" aria-labelledby="one-area-title">
-        <img src="/images/a-hills.webp" alt="Rolling Texas Hill Country landscape" width="944" height="416" decoding="async" />
+        <img src="/images/a-hills.webp" alt="Rolling Texas Hill Country landscape" width="944" height="416" />
         <div className="one-area-copy"><p className="one-index"><b>04</b> / SERVICE AREA</p><h2 id="one-area-title">Rooted in Boerne. Ready for the greater San Antonio area.</h2><p>We proudly serve homeowners in Boerne, San Antonio, Helotes, Fair Oaks Ranch and Bulverde.</p></div>
         <div className="one-area-list"><p>Proudly serving</p><ul>{serviceAreas.map(area => <li key={area}>{area}</li>)}</ul></div>
       </section>

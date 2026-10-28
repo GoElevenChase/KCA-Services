@@ -26,6 +26,8 @@ export function Motion({ rules, parallax = [] }: { rules: readonly Rule[]; paral
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const root = document.documentElement;
     root.classList.add("js-motion");
+    // Decode every image up front so none pops in late when its section scrolls into view.
+    document.querySelectorAll<HTMLImageElement>("main img").forEach(img => { img.decode?.().catch(() => {}); });
     const cleanups: Array<() => void> = [];
 
     // Reveal on scroll

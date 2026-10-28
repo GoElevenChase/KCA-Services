@@ -136,3 +136,7 @@
   .two-footer-tag{white-space:nowrap;font-size:9px;letter-spacing:.14em}
   .two-footer-grid{gap:28px 20px}
 }
+
+/* images are always visible (no reveal gating); only a gentle hover zoom */
+.two-split>img{transition:transform .8s var(--ease)}
+.two-split:hover>img{transform:scale(1.05)}

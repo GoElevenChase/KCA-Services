@@ -142,3 +142,7 @@
   .one-footer-brand p{white-space:nowrap;font-size:10px}
   .one-footer-grid{gap:28px 20px}
 }
+
+/* images are always visible (no reveal gating); only a gentle hover zoom */
+.one-row>img,.one-approach>img,.one-solutions>img,.one-area>img{transition:transform .8s var(--ease)}
+.one-row:hover>img,.one-approach:hover>img,.one-solutions:hover>img,.one-area:hover>img{transform:scale(1.05)}
