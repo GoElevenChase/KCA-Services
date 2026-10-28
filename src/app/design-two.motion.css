@@ -140,3 +140,11 @@
 /* images are always visible (no reveal gating); only a gentle hover zoom */
 .two-split>img{transition:transform .8s var(--ease)}
 .two-split:hover>img{transform:scale(1.05)}
+
+/* mobile: contact text must sit under the photo, not be clipped by it */
+@media (max-width:760px){
+  .two-contact-photo{overflow:visible;background:var(--navy-deep);min-height:0}
+  .two-contact-photo img{position:relative;inset:auto;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+  .two-contact-photo::before{display:none}
+  .two-contact-copy{padding:32px 20px 36px;max-width:none}
+}
