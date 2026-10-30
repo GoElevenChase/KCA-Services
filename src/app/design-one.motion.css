@@ -146,3 +146,48 @@
 /* images are always visible (no reveal gating); only a gentle hover zoom */
 .one-row>img,.one-approach>img,.one-solutions>img,.one-area>img{transition:transform .8s var(--ease)}
 .one-row:hover>img,.one-approach:hover>img,.one-solutions:hover>img,.one-area:hover>img{transform:scale(1.05)}
+
+/* alignment pass: header, hero and every section share one left edge */
+.design-one{--gutter:clamp(20px,4vw,40px);--edge:max(var(--gutter),calc((100% - 1180px)/2 + var(--gutter)))}
+.design-one .site-header{padding-inline:var(--edge)}
+.one-hero{padding-left:var(--edge)}
+.one-hero-copy{padding-left:0;padding-right:32px}
+.one-hero h1{font-size:clamp(42px,5.600vw,84px)}
+.one-solutions{padding-inline:var(--edge)}
+.one-tabs{padding-left:30px}
+.one-footer-bottom{display:flex;justify-content:space-between;gap:12px 24px;flex-wrap:wrap}
+@media (max-width:1000px){
+  .one-intro{padding-bottom:56px}
+  .one-pillars{margin-inline:calc(var(--gutter)*-1)}
+  .one-pillar{padding-inline:var(--gutter)}
+  .one-tabs{padding-left:0}
+  .one-row-copy{padding-inline:var(--gutter)}
+  .one-solutions{gap:28px 36px}
+  .one-area{align-items:start;row-gap:20px}
+  .one-area>img{grid-row:1 / span 2}
+  .one-area-list{grid-column:2}
+  .one-footer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .one-footer-brand,.one-footer-since{grid-column:1/-1}
+  .one-footer-since{max-width:none;padding-left:0;border-left:0}
+}
+@media (max-width:760px){
+  .one-hero{padding-left:0}
+  .one-hero-copy{padding:36px var(--gutter) 28px}
+  .one-intro{padding-top:56px;padding-bottom:40px}
+  .one-pillar{padding-block:28px 30px}
+  .one-row-copy{padding:32px var(--gutter) 40px}
+  .one-approach{padding-top:56px}
+  .one-solutions{padding-block:48px;gap:24px}
+  .one-area{grid-template-columns:1fr;padding-block:56px 32px}
+  .one-area>img{grid-row:auto}
+  .one-area-list{grid-column:auto}
+  .one-faq{padding-block:56px 40px}
+  .one-contact{padding-top:32px;padding-bottom:64px}
+  .one-footer{padding-top:48px}
+  .one-footer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .one-footer-grid>nav{order:1}
+  .one-footer-grid>div:nth-child(4){order:2}
+  .one-footer-grid>div:nth-child(3){order:3;grid-column:1/-1}
+  .one-footer-since{order:4}
+  .one-footer-bottom{padding-bottom:64px}
+}

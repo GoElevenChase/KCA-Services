@@ -61,7 +61,7 @@ export function DesignOne() {
           <p className="one-hero-text">Reliable home HVAC and plumbing service in Boerne and the greater San Antonio area.</p>
           <div className="one-hero-actions"><a className="one-button" href="#contact">Request Service</a><a className="one-call" href={business.phoneHref}><PhoneIcon /> Call {business.phone}</a></div>
         </div>
-        <div className="one-hero-photo"><img data-parallax fetchPriority="high" src={photo("a-hero", 1800)} alt="A technician connecting a hose to an outdoor air conditioning unit" width="1744" height="944" /><span className="one-hero-tag">PROFESSIONAL SERVICE.<br />LASTING COMFORT.</span></div>
+        <div className="one-hero-photo"><img data-parallax fetchPriority="high" src={photo("a-hero", 2400)} alt="A technician connecting a hose to an outdoor air conditioning unit" width="1744" height="944" /><span className="one-hero-tag">PROFESSIONAL SERVICE.<br />LASTING COMFORT.</span></div>
       </section>
 
       <section className="one-intro" aria-labelledby="one-intro-title">
@@ -110,7 +110,7 @@ export function DesignOne() {
         <div><h3>Service Area</h3><ul>{serviceAreas.map(area => <li key={area}>{area}</li>)}</ul></div>
         <p className="one-footer-since">Serving local homeowners since {business.founded}.</p>
       </div>
-      <div className="one-footer-bottom"><span>© {new Date().getFullYear()} KCA Services. All rights reserved.</span></div>
+      <div className="one-footer-bottom"><span>© {new Date().getFullYear()} KCA Services. All rights reserved.</span><span>Prepared by ElevenChase</span></div>
     </footer>
   </div>;
 }

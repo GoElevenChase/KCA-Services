@@ -52,7 +52,7 @@ export function DesignTwo() {
     <SiteHeader variant="two" nav={nav} />
     <main id="main-content">
       <section className="two-hero" aria-labelledby="two-hero-title">
-        <img data-parallax fetchPriority="high" className="two-hero-photo" src={photo("b-hero", 1800)} alt="A technician servicing an outdoor air conditioning unit" width="1956" height="1244" />
+        <img data-parallax fetchPriority="high" className="two-hero-photo" src={photo("b-hero", 2400)} alt="A technician servicing an outdoor air conditioning unit" width="1956" height="1244" />
         <div className="two-hero-copy"><p className="two-eyebrow">HVAC &amp; PLUMBING SERVICES</p><h1 id="two-hero-title">Comfort that works as hard as you do.</h1><p>Heating, cooling and plumbing for homes across Boerne and greater San Antonio.</p><div className="two-hero-actions"><a className="two-button" href="#contact">REQUEST SERVICE <Arrow /></a><a className="two-button is-ghost" href="#services">EXPLORE SERVICES</a></div></div>
       </section>
 
@@ -81,7 +81,7 @@ export function DesignTwo() {
         <div className="two-footer-col"><h3>Service Area</h3><ul>{serviceAreas.map(area => <li key={area}>{area}</li>)}</ul></div>
         <p className="two-footer-since">Serving local homeowners since {business.founded}.</p>
       </div>
-      <div className="two-footer-bottom"><span>© {new Date().getFullYear()} KCA Services. All rights reserved.</span></div>
+      <div className="two-footer-bottom"><span>© {new Date().getFullYear()} KCA Services. All rights reserved.</span><span>Prepared by ElevenChase</span></div>
     </footer>
   </div>;
 }
