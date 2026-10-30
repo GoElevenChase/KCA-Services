@@ -20,6 +20,6 @@ const photos = {
 export type PhotoName = keyof typeof photos;
 
 /** HD, auto-formatted (WebP/AVIF where supported) and cropped by the CDN to the width requested. */
-export function photo(name: PhotoName, width = 1400, quality = 78): string {
+export function photo(name: PhotoName, width = 2000, quality = 90): string {
   return `https://images.unsplash.com/${photos[name]}?w=${width}&q=${quality}&auto=format&fit=crop`;
 }

@@ -46,7 +46,7 @@
 .two-split.is-light{background:#f6f7f8}
 .two-split-copy{align-self:center;padding:40px clamp(24px,6vw,84px)}
 .two-split h2{font-size:clamp(26px,2.800vw,38px);line-height:1.08;margin-bottom:14px;max-width:360px}
-.is-dark h2{color:#fff}
+.two-split.is-dark h2{color:#fff}
 .two-split-copy>p:not(.two-eyebrow){font-size:clamp(12px,1vw,14px);max-width:360px;margin-bottom:22px;opacity:.9}
 
 /* capabilities / faq */

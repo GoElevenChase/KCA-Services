@@ -10,5 +10,6 @@ export const metadata = siteMetadata;
 const motionGate = "try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('js-motion')}catch(e){}";
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-  return <html lang="en"><head><link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" /><link rel="preload" href="/fonts/Manrope.ttf" as="font" type="font/ttf" crossOrigin="anonymous" /><script dangerouslySetInnerHTML={{ __html: motionGate }} /></head><body><a className="skip-link" href="#main-content">Skip to content</a>{children}</body></html>;
+  // suppressHydrationWarning: the inline script above intentionally adds `js-motion` to <html> before hydration.
+  return <html lang="en" suppressHydrationWarning><head><link rel="preconnect" href="https://images.unsplash.com" crossOrigin="anonymous" /><link rel="preload" href="/fonts/Manrope.ttf" as="font" type="font/ttf" crossOrigin="anonymous" /><script dangerouslySetInnerHTML={{ __html: motionGate }} /></head><body><a className="skip-link" href="#main-content">Skip to content</a>{children}</body></html>;
 }

@@ -47,6 +47,6 @@ export function DesignChooser() {
       <p>Each direction is a complete, responsive homepage. Use the floating bar to switch designs or return here. The request form is a local preview that opens an email draft, and call links lead to {siteContent.business.phone}.</p>
     </section>
 
-    <footer className="chooser-footer"><span>Thoughtfully prepared for KCA Services.</span><span>Two homepage concepts · October 2026</span><span>Presentation only · Excluded from search</span></footer>
+    <footer className="chooser-footer"><span>Prepared by ElevenChase for KCA Services.</span><span>Two homepage concepts · October 2026</span><span>Presentation only · Excluded from search</span></footer>
   </main>;
 }

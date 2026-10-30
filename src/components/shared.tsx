@@ -31,6 +31,10 @@ export function Brand({ variant, inverse = false }: { variant: Variant; inverse?
     : <span className="brand brand-two"><b>KCA</b> SERVICES</span>;
 }
 
+export function MenuIcon({ open }: { open: boolean }) {
+  return <svg className={`menu-icon${open ? " is-open" : ""}`} width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path className="bar-1" d="M4 7h16" /><path className="bar-2" d="M4 12h16" /><path className="bar-3" d="M4 17h16" /></svg>;
+}
+
 export function SiteHeader({ variant, nav }: { variant: Variant; nav: readonly { label: string; href: string }[] }) {
   const [open, setOpen] = useState(false);
   const trigger = useRef<HTMLButtonElement>(null);
@@ -49,7 +53,8 @@ export function SiteHeader({ variant, nav }: { variant: Variant; nav: readonly {
     <nav className="desktop-nav" aria-label="Main navigation">{nav.map((item, index) => <a key={item.href + item.label} href={item.href} aria-current={variant === "two" && index === 0 ? "true" : undefined}>{item.label}</a>)}</nav>
     {variant === "two" && <a className="header-phone" href={siteContent.business.phoneHref}><PhoneIcon /> {siteContent.business.phone}</a>}
     <a className="header-cta" href="#contact">{variant === "one" ? "Request Service" : <>REQUEST SERVICE</>}</a>
-    <button ref={trigger} type="button" className="mobile-toggle" aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? "Close menu" : "Open menu"} onClick={() => setOpen(!open)}>{open ? "Close" : "Menu"}</button>
+    <a className="mobile-call" href={siteContent.business.phoneHref} aria-label={`Call ${siteContent.business.phone}`}><PhoneIcon /></a>
+    <button ref={trigger} type="button" className="mobile-toggle" aria-expanded={open} aria-controls="mobile-navigation" aria-label={open ? "Close menu" : "Open menu"} onClick={() => setOpen(!open)}><MenuIcon open={open} /></button>
     {open && <div id="mobile-navigation" ref={panel} className="mobile-navigation"><nav aria-label="Mobile navigation">{nav.map(item => <a key={item.href + item.label} href={item.href} onClick={() => setOpen(false)}>{item.label}</a>)}<a href={siteContent.business.phoneHref}>Call {siteContent.business.phone}</a><a href="#contact" onClick={() => setOpen(false)}>Request Service</a></nav></div>}
   </header>;
 }
